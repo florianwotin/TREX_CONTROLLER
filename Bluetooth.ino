@@ -21,7 +21,7 @@ void Bluetooth()
   else                                                         // less than 3 bytes in buffer
   {
     e++;                                                       // count program loops with less than 3 bytes in buffer
-    if(e>100)                                                  // assume lost signal if buffer less than 3 bytes for too long
+    if(e>1000)                                                  // assume lost signal if buffer less than 3 bytes for too long
     {
       lmspeed=0;                                               // stop left motor
       rmspeed=0;                                               // stop right motor
@@ -37,7 +37,7 @@ void BluetoothConfig()                                         // This code inte
 {
   long baud[]={9600,115200,57600,38400,19200,4800,2400,1200};  // try 9600 first as this is default setting then try other baud rates
   byte br=0,d;
-  while(mode==0 && br<8)                                       // scan through different baud rates and attempt to configure bluetooth module
+  while(mode==0 && br < 8)                                       // scan through different baud rates and attempt to configure bluetooth module
   {
     Serial.begin(baud[br]);                                    // enable T'REX serial at baud rate baud[br]
     Serial.print("AT");                                        // send "AT" to see if bluetooth module is connected
@@ -71,7 +71,7 @@ void BluetoothConfig()                                         // This code inte
     {
       EmptyBuffer();
       Serial.end();                                            // close serial communications at this baud rate
-      br++;                                                    // prepare to try next baud rate
+      br = (br+1)%7;                                                    // prepare to try next baud rate
     }
   }
 }
@@ -122,4 +122,3 @@ void EmptyBuffer()
  
  
  */
-
