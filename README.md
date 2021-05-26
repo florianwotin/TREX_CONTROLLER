@@ -1,5 +1,5 @@
 # TREX_CONTROLLER
-[TREX Embedded GPU project]([florianwotin/TREX_PROJECT: TREX Embedded GPU project (github.com)](https://github.com/florianwotin/TREX_PROJECT)) controller
+[TREX Embedded GPU project](https://github.com/florianwotin/TREX_PROJECT) controller
 
 
 
