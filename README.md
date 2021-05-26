@@ -9,12 +9,7 @@ Initial files come from : https://www.generationrobots.com/fr/401824-controleur-
 
 
 
-## Contributors
+## What did we change ?
 
-Florian WOTIN
+We did a bugfix affacting two files (Bluetooth.ino and TREX_controller.ino) for bluetooth feature.
 
-Julien SOLBACH
-
-Pablo GRANA
-
-Philippe D'ANSELME
